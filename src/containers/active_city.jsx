@@ -9,13 +9,14 @@ class ActiveCity extends Component {
 
   render() {
 
-    let style = {
-        backgroundImage: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(https://kitt.lewagon.com/placeholder/cities/${this.props.activeCity.slug})`
-      };
+    let style = {}
 
-    if (!this.props.activeCity) {
-      const style = {}
+    if (this.props.activeCity.name !== undefined) {
+      style = { backgroundImage: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(https://kitt.lewagon.com/placeholder/cities/${this.props.activeCity.slug})` };
+
     }
+
+    let classes = "city-image"
 
     return (
       <div className="active-city">
@@ -27,7 +28,7 @@ class ActiveCity extends Component {
             {this.props.activeCity.address}
           </p>
         </div>
-        <div className="city-image" style={style}>
+        <div className={classes} style={style}>
 
         </div>
       </div>
